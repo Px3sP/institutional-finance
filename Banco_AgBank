@@ -1,0 +1,44 @@
+import numpy as np 
+
+print("\n\n----------------------------------\n")
+retornos_mensais = np.array([
+     [ 0, -2 , 4 ,-4 , 2,  7,  0, 3 , 9 , 9, 5, -2],
+     [-4,  6,  6,  0, -1 , 5, -5,  2,  6,  1, -1,  1],
+     [ 1, -1, -5 , 9 , 7  ,9  ,7,  1,  6,  8,  7, -5],
+     [-2 , 0 , 0,  0, -3 , 2, -1,  8, 5, -1,  6,  7],
+     [ 3 , 7 , 1 , 0 , 3, -4, -4,  4, -2, -5,  8,  8]])
+
+print(f"Retornos Mensais :\n {retornos_mensais}")
+ativos = ['PETR4', 'ITUB4', 'IVVB11', 'Tesouro Selic', 'KNRI11'] 
+print("\n\n----------------------------------\n")
+
+
+#retorno médio anual de cada ativo
+print("Retorno médio de cada ativo ")
+for i in range(len(retornos_mensais)): 
+    media_retorno = retornos_mensais[i].mean()
+    print(f"{ativos[i]}: {media_retorno:.2f}%")
+
+print("\n\n----------------------------------\n")
+
+#Desvio padrão para cada ativo
+print("Desvio padrão dos ativos")
+
+for j in range(len(retornos_mensais)): 
+    desvio_PadraO = retornos_mensais[j].std()
+    print(f"{ativos[j]}:  {desvio_PadraO:.2f}")
+print("\n\n----------------------------------\n")
+
+#Retorno total da carteira 
+print("Retorno total de cada carteira")
+retorno_total = np.sum(retornos_mensais)
+print(f"Total: {retorno_total:.2f}% ")
+
+print("\n\n----------------------------------\n")
+
+
+print("Retorno total de cada ativo")
+for b in range(len(retornos_mensais)): 
+    retorno_Ativo = np.sum(retornos_mensais[b])
+    print(f"{ativos[b]} {retorno_Ativo},%")
+    retorno = retorno_Ativo
